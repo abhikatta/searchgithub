@@ -11,7 +11,6 @@ const DoublyLinkedList = () => {
   const [root, setRoot] = useState(null);
   const [inputValue, setInputValue] = useState("");
   const [output, setOutput] = useState("");
-  // this is a test comment
   const insertAtBeginning = () => {
     const data = inputValue;
     const node = new Node(data);
@@ -38,7 +37,7 @@ const DoublyLinkedList = () => {
     let current = root;
     let output = "";
     while (current !== null) {
-      output += current.data + "↔️";
+      output += current.data + "<-->";
       current = current.next;
     }
     output += "null";

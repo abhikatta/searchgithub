@@ -15,11 +15,6 @@ button{
 margin-left: 10px;
 }
 
-.main{
+*{
   text-align: center;
-
 } 
-.container{
-  display:grid;
-  grid-auto-flow: column;
-}

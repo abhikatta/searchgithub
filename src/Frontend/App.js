@@ -6,6 +6,7 @@ const Main = () => {
     <>
       <Linedlist />
       <DoublyLinkedList />
+      <footer>Sorry, I suck at CSS.</footer>
     </>
   );
 };
