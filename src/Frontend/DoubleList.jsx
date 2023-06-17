@@ -2,10 +2,12 @@ import { useState } from "react";
 class Node {
   constructor(data) {
     this.data = data;
+    this.prev = null;
     this.next = null;
   }
 }
-const Linedlist = () => {
+
+const DoublyLinkedList = () => {
   const [root, setRoot] = useState(null);
   const [inputValue, setInputValue] = useState("");
   const [output, setOutput] = useState("");
@@ -19,33 +21,31 @@ const Linedlist = () => {
   };
   const insertAtEnd = () => {
     const data = inputValue;
-    let node = new Node(data);
+    const node = new Node(data);
     if (root === null) {
       setRoot(node);
+    } else {
+      let current = root;
+      while (current.next !== null) {
+        current = current.next;
+      }
+      current.next = node;
+      node.prev = current;
     }
-    let current = root;
-    while (current.next != null) {
-      current = current.next;
-    }
-    current.next = node;
     setInputValue("");
   };
   const traverse = () => {
-    let output = "";
     let current = root;
+    let output = "";
     while (current !== null) {
-      output += current.data + " -> ";
+      output += current.data + "↔️";
       current = current.next;
     }
     output += "null";
     setOutput(output);
   };
   const deleteAtEnd = () => {
-    if (root === null) {
-      return;
-    }
-    if (root.next === null) {
-      setRoot(null);
+    if (root === null || root.next === null) {
       return;
     }
     let current = root;
@@ -57,29 +57,26 @@ const Linedlist = () => {
     prev.next = null;
   };
   const deleteAtBeginning = () => {
-    if (root !== null) {
-      setRoot(root.next);
-    }
+    setRoot(root.next);
   };
-
   return (
-    <div>
-      <h1>LinkedList</h1>
-      <label htmlFor="data-input">Enter Data:</label>
-      <input
-        type="text"
-        id="data-input"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-      />
+    <div className="main">
+      <div>
+        <h1>DoublyLinkedList</h1>
+        <input
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Enter Data:"
+          className="main"
+        />
+      </div>
       <button onClick={insertAtBeginning}>insertAtBeginning</button>
       <button onClick={insertAtEnd}>insertAtEnd</button>
-      <button onClick={traverse}>Traverse</button>
-      <button onClick={deleteAtBeginning}>DeleteAtBeginning</button>
+      <button onClick={deleteAtBeginning}>deleteAtBeginning</button>
       <button onClick={deleteAtEnd}>deleteAtEnd</button>
+      <button onClick={traverse}>Traverse</button>
       <div>{output}</div>
     </div>
   );
 };
-
-export default Linedlist;
+export default DoublyLinkedList;
