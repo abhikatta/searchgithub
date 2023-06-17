@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+/* Header styles */
+header {
+    background-color: gainsboro;
+    color:cadetblue;
+    padding: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Layout container */
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-gap: 20px;
+    background-color: #f2f2f2;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #666;
+    color: #fff;
+    padding: 20px;
+}
+
+/* Content bar styles */
+.content {
+    background-color: #fff;
+    padding: 20px;
+}
+
+/* Right bar styles */
+.right-bar {
+    background-color: #999;
+    color: #fff;
+    padding: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar,
+    .right-bar {
+        display: none;
+    }
+
+    .content {
+        grid-column: 1 / -1;
+    }
+
+    footer {
+        grid-column: unset;
+    }
+}
