@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./FindFromGithub.css";
 
 const API_URL = "https://api.github.com";
-
 const fetchResults = async (query) => {
   try {
     const response = await fetch(`${API_URL}/search/users?q=${query}`);
@@ -16,6 +15,8 @@ const fetchResults = async (query) => {
 const FindFromGithub = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const [avatars,setAvatars]=useState([]);
+  
   const onSearchChange = (event) => {
     setQuery(event.target.value);
   };
@@ -25,6 +26,7 @@ const FindFromGithub = () => {
     try {
       const results = await fetchResults(query);
       setResults(results);
+      setAvatars(results.avatar_url);
     } catch (e) {
       console.log(e);
     }
