@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./FindFromGithub.css";
-import PhotoCarousel from "./PhotoCarousel";
 
 const API_URL = "https://api.github.com";
 const fetchResults = async (query) => {
@@ -16,8 +15,7 @@ const fetchResults = async (query) => {
 const FindFromGithub = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-  const [avatars,setAvatars]=useState([]);
-  PhotoCarousel(avatars);
+
   const onSearchChange = (event) => {
     setQuery(event.target.value);
   };
@@ -27,7 +25,7 @@ const FindFromGithub = () => {
     try {
       const results = await fetchResults(query);
       setResults(results);
-      setAvatars(results.avatar_url);
+      // setAvatars(results.avatar_url);
     } catch (e) {
       console.log(e);
     }
