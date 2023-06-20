@@ -1,68 +1,60 @@
-* {
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+body{
+    color: gainsboro;
+    background-color: black;
 }
-
-.app {
-    margin: 0;
-    padding: 10px;
+h3{
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-weight:normal;
+font-size: xx-large;
+ 
 }
-
-.main {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.search-form {
-    width: 100%;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.search-form input,
-.search-form button {
-    width: 280px;
-}
-
-.search-form input,
-.search-form button {
-    padding: 10px;
-    border-radius: 4px;
-}
-a{
-    text-decoration: none;
-    color:cornflowerblue;
-    background-color: white;
-    padding: 4px;
-}
-a:hover{
-    background-color:bisque ;
-    border-radius: 6px;
+.user{
+    background-color: #282c34;
+    width: auto;
     
-
-}
-.search-form input {
-    border: 1px solid grey;
-    outline: none;
 }
 
-.search-form button {
-    margin-left: 10px;
+.search-form{
+    color: black;
+    height: 40px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 10px;
+    width: 130px;
+    font-size: medium;
+    outline-style: none;
+}
+
+.search-button{
+height: 40px;
+width: 100px;
+border-radius: 1000px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.search-button:hover{
+    background-color: bisque;
+}
+.name{
+    color: aliceblue;
+    font-family: Montserrat;
+    padding: 2px;
+    text-decoration: none;
+}
+.name:hover{
     background-color: beige;
-    border: 1px solid aquamarine;
-    color: green;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-}
-
-.user {
-    height: 100px;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid black;
+    color: black;
+    padding: 2px;
     border-radius: 4px;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
+
+}
+.avatar{
+    border-radius: 20px;
+}
+.results{
+    text-align: center;
+    width: auto; 
+    background-color: #282c34;
+    display:inline-block;
+    border: 1px solid cadetblue;
+    padding: 20px;
 }

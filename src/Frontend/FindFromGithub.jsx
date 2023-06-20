@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./FindFromGithub.css";
+
 const API_URL = "https://api.github.com";
 const fetchResults = async (query) => {
   try {
@@ -14,6 +15,7 @@ const fetchResults = async (query) => {
 const FindFromGithub = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+
   const onSearchChange = (event) => {
     setQuery(event.target.value);
   };
@@ -23,6 +25,7 @@ const FindFromGithub = () => {
     try {
       const results = await fetchResults(query);
       setResults(results);
+      // setAvatars(results.avatar_url);
     } catch (e) {
       console.log(e);
     }
@@ -30,9 +33,9 @@ const FindFromGithub = () => {
 
   return (
     <div className="main">
-      <h2>Project FindFromGithub</h2>
+      <h3>searchgithub</h3>
       <Form onChange={onSearchChange} onSubmit={onSearchSubmit} value={query} />
-      <h3>Results</h3>
+      <h3>Results:</h3>
       <div>
         <div>
           {results.map((user) => (
@@ -51,9 +54,10 @@ const FindFromGithub = () => {
 
 const User = ({ avatar, url, name }) => {
   return (
-    <div className="user">
-      <img src={avatar} alt={name} width={50} height={50} />
-      <a href={url} rel="noopener noreferrer">
+    <div className="results">
+      <img className="avatar" src={avatar} alt={name} width={50} height={50} />
+      <br></br>
+      <a href={url} className="name" rel="noopener noreferrer">
         {name}
       </a>
     </div>
@@ -61,14 +65,17 @@ const User = ({ avatar, url, name }) => {
 };
 const Form = ({ onSubmit, onChange, value }) => {
   return (
-    <form className="search-form" onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}>
       <input
+        className="search-form"
         type="text"
-        placeholder="Enter username or mail:"
+        placeholder="Enter username:"
         onChange={onChange}
         value={value}
       />
-      <button type="submit">Search</button>
+      <button className="search-button" type="submit">
+        Search
+      </button>
     </form>
   );
 };
