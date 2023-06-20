@@ -1,3 +1,4 @@
+#!bin/bash
 # take an input message if it is empty
 # take another input either y/n
 # if y then no npm run deploy
