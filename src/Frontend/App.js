@@ -7,7 +7,7 @@ const Main = () => {
     <>
       <Linedlist />
       <DoublyLinkedList />
-      <PhotoCarousel />
+      {/* <PhotoCarousel /> */}
       <FindFromGithub />
       <footer>Sorry, I suck at CSS.</footer>
     </>
