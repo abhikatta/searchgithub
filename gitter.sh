@@ -10,7 +10,7 @@ read arg1
 echo "Push to prod?(y/n): "
 read arg2
 
-while ["$arg1" -z] || [ "$arg2" -z ]; do
+while [ -z "$arg1" ] || [ -z "$arg2" ]; do
     echo "Enter commit message: "
     read arg1
 
@@ -18,7 +18,7 @@ while ["$arg1" -z] || [ "$arg2" -z ]; do
     read arg2
 done
 
-if ["$arg2" -eq n]; then
+if [ "$arg2" -eq "n" ]; then
     git add .
     git commit -m "$arg1"
     git push
