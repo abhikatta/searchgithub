@@ -18,7 +18,7 @@ while [ -z "$arg1" ] || [ -z "$arg2" ]; do
     read arg2
 done
 
-if [ "$arg2" -eq "n" ]; then
+if [ "$arg2" = "n" ]; then
     git add .
     git commit -m "$arg1"
     git push
