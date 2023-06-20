@@ -14,52 +14,15 @@ const fetchResults = async (query) => {
 const FindFromGithub = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-  const [avatars, setAvatars] = useState([]);
   const onSearchChange = (event) => {
     setQuery(event.target.value);
   };
-  const PhotoCarousal = () => {
-    const [current, setCurrent] = useState(0);
-    const nextSlide = () => {
-      // if on the last one:
-      // since current starts from 0
-      if (current === avatars.length - 1) {
-        setCurrent(0);
-      } else {
-        setCurrent(current - 1);
-      }
-    };
-    const prevSlide = () => {
-      if (current === 0) {
-        setCurrent(avatars.length - 1);
-      } else {
-        setCurrent(current - 1);
-      }
-    };
-    return (
-      <div>
-        <div>
-          {avatars.map(
-            (user, index) =>
-              current === index && (
-                <div key={user}>
-                  <img src={user} alt="avatar" />
-                </div>
-              )
-          )}
-          <button onClick={prevSlide}>Previous</button>
-          <button onClick={nextSlide}>Next</button>
-        </div>
-      </div>
-    );
-  };
+
   const onSearchSubmit = async (event) => {
     event.preventDefault();
     try {
       const results = await fetchResults(query);
       setResults(results);
-      const avatarUrls = results.map((user) => user.avatar_url);
-      setAvatars((prevAvatars) => [...prevAvatars, ...avatarUrls]);
     } catch (e) {
       console.log(e);
     }
@@ -82,7 +45,6 @@ const FindFromGithub = () => {
           ))}
         </div>
       </div>
-      <PhotoCarousal />
     </div>
   );
 };

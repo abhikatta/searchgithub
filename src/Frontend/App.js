@@ -1,15 +1,14 @@
 import Linedlist from "./LinkedList";
 import DoublyLinkedList from "./DoubleList";
-import PhotoCarousel from "./PhotoCarousel";
 import FindFromGithub from "./FindFromGithub";
+import PhotoCarousel from "./PhotoCarousel";
 const Main = () => {
   return (
     <>
       <Linedlist />
       <DoublyLinkedList />
-      {/* <PhotoCarousel /> */}
       <FindFromGithub />
-      <footer>Sorry, I suck at CSS.</footer>
+      <PhotoCarousel />
     </>
   );
 };
