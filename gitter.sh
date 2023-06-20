@@ -9,7 +9,7 @@ read arg1
 echo "Push to prod?(y/n): "
 read arg2
 
-while [-z "$arg1"] || [-z "$arg2" ]; do
+while ["$arg1" -z] || [ "$arg2" -z ]; do
     echo "Enter commit message: "
     read arg1
 
