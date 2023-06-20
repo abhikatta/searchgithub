@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Commit message: $arg1"
-echo "Skip deploy:(y/n) $arg2"
 if [ "$arg1" == "" ]; then
     echo "Enter the commit message: "
     read commit_message
