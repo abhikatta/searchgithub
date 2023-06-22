@@ -5,7 +5,7 @@ class Node {
     this.next = null;
   }
 }
-const Linedlist = () => {
+const Linkedlist = () => {
   const [root, setRoot] = useState(null);
   const [inputValue, setInputValue] = useState("");
   const [output, setOutput] = useState("");
@@ -101,4 +101,4 @@ const Linedlist = () => {
   );
 };
 
-export default Linedlist;
+export default Linkedlist;

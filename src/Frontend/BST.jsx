@@ -11,18 +11,32 @@ const BinarySearchTree = () => {
   const [inputValue, setInputValue] = useState("");
   const [output, setOutput] = useState("");
 
-  const insertion = () => {
+  const insertion = ({ inputValue, root }) => {
     let current = root;
     let data = inputValue;
     let node = new Node(data);
-
-    while (current !== null) {
-      if (data < current.data) {
-        current = current.left;
-      }
+    if (root === null) {
+      setRoot(node);
     }
+    if (data < current.data) {
+      current.left = insertion(current.left);
+    } else if (data > current.data) {
+      current.right = insertion(current.right);
+    } else {
+      return node;
+    }
+    setInputValue("");
   };
-  const DFSTraversal = () => {};
+  const DFSTraversal = ({ root }) => {};
+
+  let ans = "";
+  if (root !== null) {
+    DFSTraversal(root.left);
+    ans += root.data;
+    DFSTraversal(root.right);
+  }
+  setOutput(ans);
+
   return (
     <div className="main">
       <input
@@ -31,7 +45,10 @@ const BinarySearchTree = () => {
         onChange={(r) => setInputValue(r.target.value)}
       />
       <button onClick={insertion}>Insert</button>
-      <button onClick={DFSTraversal}>Insert</button>
+      <button onClick={DFSTraversal}>Traverse</button>
+      <div>{output}</div>
     </div>
   );
 };
+
+export default BinarySearchTree;

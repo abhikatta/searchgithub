@@ -1,4 +1,10 @@
-import FindFromGithub from "./FindFromGithub";
+import Bubblesort from "./BubbleSort";
+import MergeSort from "./MergeSort";
 export default function Main() {
-  return <FindFromGithub />;
+  return (
+    <>
+      <Bubblesort />
+      <MergeSort />
+    </>
+  );
 }
