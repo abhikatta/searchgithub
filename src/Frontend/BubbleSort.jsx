@@ -29,16 +29,21 @@ const Bubblesort = () => {
   let size = array.length;
 
   return (
-    <>
+    <div className="main">
       <h3>BubbleSort:</h3>
       <input
+        className="input"
         value={inputValue}
         onChange={Onchange}
         placeholder="Enter your array (with spaces not commas)"></input>
-      <button onClick={onClick}>Enter</button>
-      <h2>Results:</h2>
+      <br></br>
+
+      <button className="submit-button" onClick={onClick}>
+        Enter
+      </button>
+      <h3>Results:</h3>
       <div>{bubblesort(array, size).join(", ")}</div>
-    </>
+    </div>
   );
 };
 

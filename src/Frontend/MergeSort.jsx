@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./BubbleSort.css";
 function split(array) {
   if (array.length <= 1) {
     return array;
@@ -49,21 +49,20 @@ const MergeSort = () => {
     setArray(inputArray);
   };
   return (
-    <>
+    <div className="main">
       <h3>MergeSort: </h3>
       <input
+        className="input"
         value={inputValue}
         onChange={onChange}
         placeholder="Enter your array (space separated)"></input>
-      <button onClick={onClick}>Enter</button>
-      <h2>Results:</h2>
+      <br></br>
+      <button className="submit-button" onClick={onClick}>
+        Enter
+      </button>
+      <h3>Results:</h3>
       <div>{split(array).join(", ")}</div>
-      {/* <div>
-        {array.map((item, index) => (
-          <h3 key={index}>{item + ", "}</h3>
-        ))} */}
-      {/* </div> */}
-    </>
+    </div>
   );
 };
 export default MergeSort;
