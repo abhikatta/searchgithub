@@ -1,3 +1,5 @@
+import "./BubbleSort.css";
+
 // import { useState } from "react";
 // const Stack = () => {
 //   const [top, setTop] = useState(-1);
@@ -89,10 +91,11 @@
 
 import React, { useState } from "react";
 
-const Stack = ({ maxSize }) => {
+const Stack = () => {
   const [stack, setStack] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [top, setTop] = useState(-1);
+  const [maxSize, setMaxSize] = useState();
 
   const push = () => {
     if (inputValue !== "" && top < maxSize - 1) {
@@ -110,18 +113,35 @@ const Stack = ({ maxSize }) => {
   };
 
   return (
-    <div>
+    <div className="main">
+      <h3>Stack</h3>
       <input
+        className="input"
+        type="text"
+        value={maxSize}
+        onChange={(e) => setMaxSize(e.target.value)}
+        placeholder="Enter max size"></input>
+      <br></br>
+      <input
+        className="input"
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         placeholder="Enter a value"
       />
-      <button onClick={push}>Push</button>
-      <button onClick={pop}>Pop</button>
+      <br></br>
+
+      <button className="submit-button" onClick={push}>
+        Push
+      </button>
+      <button className="submit-button" onClick={pop}>
+        Pop
+      </button>
+      <br></br>
       <div>
         <strong>Top:</strong> {top}
       </div>
+
       <div>
         <strong>Max Size:</strong> {maxSize}
       </div>

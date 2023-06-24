@@ -7,7 +7,7 @@ const App = () => {
     <>
       <BubbleSort />
       <MergeSort />
-      <Stack maxSize={2} />
+      <Stack />
     </>
   );
 };
