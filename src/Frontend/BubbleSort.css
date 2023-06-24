@@ -4,6 +4,11 @@ div{
 h3{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.no-deco{
+    text-decoration: none;
+    color: gainsboro;
+    
+}
 body{
     background-color: rgb(24, 32, 41);
     color: gainsboro;

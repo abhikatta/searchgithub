@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./BubbleSort.css";
 function bubblesort(array, size) {
   for (let i = 0; i < size; i += 1) {
@@ -14,7 +14,7 @@ function bubblesort(array, size) {
   return array;
 }
 
-const Bubblesort = () => {
+const BubbleSort = () => {
   const [inputValue, setInputValue] = useState("");
   const [array, setArray] = useState([]);
 
@@ -30,7 +30,7 @@ const Bubblesort = () => {
 
   return (
     <div className="main">
-      <h3>BubbleSort:</h3>
+      <h3>BubbleSort</h3>
       <input
         className="input"
         value={inputValue}
@@ -47,4 +47,4 @@ const Bubblesort = () => {
   );
 };
 
-export default Bubblesort;
+export default BubbleSort;

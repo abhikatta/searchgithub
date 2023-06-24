@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./BubbleSort.css";
+import React from "react";
 function split(array) {
   if (array.length <= 1) {
     return array;
@@ -50,7 +51,7 @@ const MergeSort = () => {
   };
   return (
     <div className="main">
-      <h3>MergeSort: </h3>
+      <h3>MergeSort</h3>
       <input
         className="input"
         value={inputValue}

@@ -1,10 +1,14 @@
-import Bubblesort from "./BubbleSort";
+import React from "react";
+import BubbleSort from "./BubbleSort";
 import MergeSort from "./MergeSort";
-export default function Main() {
+import Stack from "./Stack";
+const App = () => {
   return (
     <>
-      <Bubblesort />
+      <BubbleSort />
       <MergeSort />
+      <Stack maxSize={2} />
     </>
   );
-}
+};
+export default App;
