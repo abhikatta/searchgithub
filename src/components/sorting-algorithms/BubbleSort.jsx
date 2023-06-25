@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./BubbleSort.css";
+import "./sorting-algorithms.css";
 function bubblesort(array, size) {
   for (let i = 0; i < size; i += 1) {
     for (let j = 0; j < size; j += 1) {
@@ -17,12 +17,14 @@ function bubblesort(array, size) {
 const BubbleSort = () => {
   const [inputValue, setInputValue] = useState("");
   const [array, setArray] = useState([]);
-
+  const [inputArray, setInputArray] = useState(inputValue);
   const Onchange = (e) => {
     setInputValue(e.target.value);
+    setInputArray(inputArray);
   };
   const onClick = () => {
-    const inputArray = inputValue.split(" ").map(Number);
+    const inputArray = inputValue.split(",").map(Number);
+
     setArray(inputArray);
   };
 
@@ -30,19 +32,27 @@ const BubbleSort = () => {
 
   return (
     <div className="main">
-      <h3>BubbleSort</h3>
+      <h2>BubbleSort</h2>
       <input
         className="input"
         value={inputValue}
         onChange={Onchange}
-        placeholder="Enter your array (with spaces not commas)"></input>
+        placeholder="Enter your array :"></input>
       <br></br>
 
       <button className="submit-button" onClick={onClick}>
         Enter
       </button>
-      <h3>Results:</h3>
-      <div>{bubblesort(array, size).join(", ")}</div>
+      <br></br>
+      <div>
+        <div>
+          <b>Input:</b> [{inputValue.length === 0 ? "" : inputValue}]
+        </div>
+      </div>
+
+      <div>
+        <b>Results: </b>[{bubblesort(array, size).join(", ")} ]
+      </div>
     </div>
   );
 };

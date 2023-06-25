@@ -1,4 +1,6 @@
 import { useState } from "react";
+import "./data-structures.css";
+
 class Node {
   constructor(data) {
     this.data = data;
@@ -81,22 +83,37 @@ const Linkedlist = () => {
   return (
     <div className="main">
       <div>
-        <h1>LinkedList</h1>
+        <h2>LinkedList</h2>
         <input
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Enter Data:"
-          className="main"
+          className="input"
         />
       </div>
-      <button onClick={insertAtBeginning}>insertAtBeginning</button>
-      <button onClick={insertAtEnd}>insertAtEnd</button>
-      <button onClick={deleteAtBeginning}>DeleteAtBeginning</button>
-      <button onClick={deleteAtEnd}>deleteAtEnd</button>
-      <button onClick={reverseLinkedList}>reverseLinkedList</button>
-      <button onClick={traverse}>Traverse</button>
-      <div>{output}</div>
+      <button className="button" onClick={insertAtBeginning}>
+        insertAtBeginning
+      </button>
+      <button className="button" onClick={insertAtEnd}>
+        insertAtEnd
+      </button>
+      <button className="button" onClick={deleteAtBeginning}>
+        DeleteAtBeginning
+      </button>
+      <button className="button" onClick={deleteAtEnd}>
+        deleteAtEnd
+      </button>
+      <button className="button" onClick={reverseLinkedList}>
+        reverseLinkedList
+      </button>
+      <button className="button" onClick={traverse}>
+        Traverse
+      </button>
+
+      <div>
+        <b>LinkedList: </b> {output.length === 0 ? "null" : output}
+      </div>
     </div>
   );
 };

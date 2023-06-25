@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./data-structures.css";
 class Node {
   constructor(data) {
     this.data = data;
@@ -61,20 +62,33 @@ const DoublyLinkedList = () => {
   return (
     <div className="main">
       <div>
-        <h1>DoublyLinkedList</h1>
+        <h2>DoublyLinkedList</h2>
         <input
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Enter Data:"
-          className="main"
+          className="input"
         />
       </div>
-      <button onClick={insertAtBeginning}>insertAtBeginning</button>
-      <button onClick={insertAtEnd}>insertAtEnd</button>
-      <button onClick={deleteAtBeginning}>deleteAtBeginning</button>
-      <button onClick={deleteAtEnd}>deleteAtEnd</button>
-      <button onClick={traverse}>Traverse</button>
-      <div>{output}</div>
+      <button className="button" onClick={insertAtBeginning}>
+        insertAtBeginning
+      </button>
+      <button className="button" onClick={insertAtEnd}>
+        insertAtEnd
+      </button>
+      <button className="button" onClick={deleteAtBeginning}>
+        deleteAtBeginning
+      </button>
+      <button className="button" onClick={deleteAtEnd}>
+        deleteAtEnd
+      </button>
+      <button className="button" onClick={traverse}>
+        Traverse
+      </button>
+      <div>
+        <b>DoublyLinkedList: </b>
+        {output.length === 0 ? "null" : output}
+      </div>
     </div>
   );
 };

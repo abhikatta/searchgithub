@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./BubbleSort.css";
+import "./sorting-algorithms.css";
 import React from "react";
 function split(array) {
   if (array.length <= 1) {
@@ -41,28 +41,36 @@ function merge(left, right) {
 const MergeSort = () => {
   const [inputValue, setInputValue] = useState("");
   const [array, setArray] = useState([]);
+  const [inputArray, setInputArray] = useState(inputValue);
 
   const onChange = (e) => {
     setInputValue(e.target.value);
+    setInputArray(inputArray);
   };
   const onClick = () => {
-    const inputArray = inputValue.split(" ").map(Number);
+    const inputArray = inputValue.split(",").map(Number);
     setArray(inputArray);
   };
   return (
     <div className="main">
-      <h3>MergeSort</h3>
+      <h2>MergeSort</h2>
       <input
         className="input"
         value={inputValue}
         onChange={onChange}
-        placeholder="Enter your array (space separated)"></input>
+        placeholder="Enter your array :"></input>
       <br></br>
       <button className="submit-button" onClick={onClick}>
         Enter
       </button>
-      <h3>Results:</h3>
-      <div>{split(array).join(", ")}</div>
+      <br></br>
+      <div>
+        <b>Input: </b>[{inputValue.length === 0 ? "" : inputValue}]
+      </div>
+
+      <div>
+        <b>Results: </b>[{split(array).join(", ")} ]
+      </div>
     </div>
   );
 };

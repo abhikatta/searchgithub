@@ -1,14 +1,15 @@
-import React from "react";
 import BubbleSort from "./BubbleSort";
 import MergeSort from "./MergeSort";
-import Stack from "./Stack";
-const App = () => {
+
+const SortRoot = () => {
   return (
     <>
       <BubbleSort />
+      <hr></hr>
       <MergeSort />
-      <Stack />
+      <hr></hr>
     </>
   );
 };
-export default App;
+
+export default SortRoot;

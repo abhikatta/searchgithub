@@ -1,4 +1,4 @@
-import "./BubbleSort.css";
+import "./data-structures.css";
 
 // import { useState } from "react";
 // const Stack = () => {
@@ -93,14 +93,14 @@ import React, { useState } from "react";
 
 const Stack = () => {
   const [stack, setStack] = useState([]);
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState();
   const [top, setTop] = useState(-1);
   const [maxSize, setMaxSize] = useState();
 
   const push = () => {
     if (inputValue !== "" && top < maxSize - 1) {
       setStack((prevStack) => [inputValue, ...prevStack]);
-      setInputValue("");
+      setInputValue(" ");
       setTop((prevTop) => prevTop + 1);
     }
   };
@@ -114,20 +114,20 @@ const Stack = () => {
 
   return (
     <div className="main">
-      <h3>Stack</h3>
+      <h2>Stack</h2>
       <input
         className="input"
-        type="text"
+        type="number"
         value={maxSize}
         onChange={(e) => setMaxSize(e.target.value)}
-        placeholder="Enter max size"></input>
+        placeholder="Enter max size :"></input>
       <br></br>
       <input
         className="input"
-        type="text"
+        type="number"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Enter a value"
+        placeholder="Enter a value :"
       />
       <br></br>
 

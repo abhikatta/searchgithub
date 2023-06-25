@@ -1,0 +1,56 @@
+div{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h3{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.no-deco{
+    text-decoration: none;
+    color: gainsboro;
+    
+}
+hr{
+    width: 800px;
+}
+body{
+    background-color: rgb(24, 32, 41);
+    color: gainsboro;
+}
+.input{
+    padding: 10px 7px ;
+    width: 27%;
+    
+    border-radius: 12px;
+    border: black solid 1px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: gainsboro;
+}
+
+.main{
+    text-align: center;
+    
+}
+.input:hover{
+    background-color: antiquewhite;
+    width: 27%;
+}
+.input::selection{
+    border: black transparent 1px;
+    width: 27%;
+}
+.button{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 4px;
+    border: black solid 1px ;
+    color: black;
+    padding: 4px;
+    background-color: rgb(170, 228, 255);
+    transition: background-color 0.2s ease;
+}
+.button:hover{
+    background-color: teal;
+    color: white;
+    animation-delay:200ms;
+}
