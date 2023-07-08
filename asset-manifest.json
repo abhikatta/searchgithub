@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Learning-React/static/css/main.77148d5f.css",
-    "main.js": "/Learning-React/static/js/main.c395edd9.js",
-    "static/js/787.55b07388.chunk.js": "/Learning-React/static/js/787.55b07388.chunk.js",
-    "index.html": "/Learning-React/index.html",
-    "main.77148d5f.css.map": "/Learning-React/static/css/main.77148d5f.css.map",
-    "main.c395edd9.js.map": "/Learning-React/static/js/main.c395edd9.js.map",
-    "787.55b07388.chunk.js.map": "/Learning-React/static/js/787.55b07388.chunk.js.map"
+    "main.css": "/searchgithub/static/css/main.6d94ebc1.css",
+    "main.js": "/searchgithub/static/js/main.ff68605b.js",
+    "static/js/787.be5bc962.chunk.js": "/searchgithub/static/js/787.be5bc962.chunk.js",
+    "index.html": "/searchgithub/index.html",
+    "main.6d94ebc1.css.map": "/searchgithub/static/css/main.6d94ebc1.css.map",
+    "main.ff68605b.js.map": "/searchgithub/static/js/main.ff68605b.js.map",
+    "787.be5bc962.chunk.js.map": "/searchgithub/static/js/787.be5bc962.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.77148d5f.css",
-    "static/js/main.c395edd9.js"
+    "static/css/main.6d94ebc1.css",
+    "static/js/main.ff68605b.js"
   ]
 }
