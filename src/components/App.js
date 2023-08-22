@@ -16,7 +16,7 @@ const User = ({ avatar, url, name }) => {
     <div className=" flex hover:cursor-pointer  hover:scale-105 transition-transform duration-150 flex-col m-1 justify-center items-center border-[#bceefd] border-2 rounded-md hover:bg-slate-500 p-2">
       <a
         href={url}
-        className="flex flex-col items-center text-center  "
+        className="flex flex-col sm:text-xl md:text-xl lg:text-xl text-xs items-center text-center  "
         rel="noopener noreferrer">
         <img
           className="flex justify-center rounded-2xl "
@@ -36,7 +36,7 @@ const Form = ({ onSubmit, onChange, className, value }) => {
       <form onSubmit={onSubmit} className="flex flex-col">
         <input
           type="text"
-          className="h-[5rem] w-auto text-3xl rounded-md bg-slate-300 text-black  focus:outline-none  px-2 py-1 "
+          className="md:h-[5rem] lg:h-[5rem] sm:h-[2rem] h-[5rem] w-auto md:text-3xl sm:text-md text-xl rounded-md bg-slate-300 text-black  focus:outline-none  px-2 py-1 "
           placeholder="Enter username:"
           onChange={onChange}
           value={value}
@@ -92,11 +92,11 @@ const App = () => {
       />
       {results.length > 0 && (
         <>
-          <h3 className="h-[5rem] w-[15rem]  text-3xl text-center rounded-md ">
+          <h3 className="h-[5rem] w-[15rem] sm:text-md md:text-3xl lg:text-3xl text-md text-center rounded-md ">
             Results:
           </h3>
           <div className=" mb-10 rounded-3xl">
-            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            <div className="grid grid-cols-3  sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
               {results.map((user) => (
                 <User
                   key={user.login}
