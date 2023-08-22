@@ -13,7 +13,7 @@ const fetchResults = async (query) => {
 
 const User = ({ avatar, url, name }) => {
   return (
-    <div className=" flex flex-col m-1 justify-center items-center border-[#bceefd] border-2 rounded-md hover:bg-slate-500 p-2">
+    <div className=" flex hover:cursor-pointer  hover:scale-105 transition-transform duration-150 flex-col m-1 justify-center items-center border-[#bceefd] border-2 rounded-md hover:bg-slate-500 p-2">
       <a
         href={url}
         className="flex flex-col items-center text-center  "
@@ -70,40 +70,53 @@ const App = () => {
   };
 
   return (
-    <div className="bg-slate-700">
-      <div className="flex flex-col h-full min-h-screen w-full items-center justify-center text-[#bceefd] bg-slate-700">
-        <h3 className="font-bold top-[30%] text-5xl items-start px-3 py-4 cursor-pointer">
+    <div className="flex flex-col h-full min-h-screen  w-full items-center justify-center text-[#bceefd] bg-slate-700">
+      <div
+        className={
+          results.length > 0
+            ? "font-bold top-[30%]  text-5xl  items-start px-3 py-4 cursor-pointer"
+            : "font-bold top-[10%] text-5xl absolute items-start px-3 py-4 cursor-pointer"
+        }>
+        <h3>
           <a href="/searchgithub">searchgithub</a>
           <p className="text-sm top-[20%] text-center mb-[5%] ">
             Search github profiles
           </p>
         </h3>
-        <Form
-          onChange={onSearchChange}
-          className="h-auto w-full text-black font-thin top-[30%] flex flex-col items-center justify-center px-5 my-10 py-10 md:text-md sm:text-sm"
-          onSubmit={onSearchSubmit}
-          value={query}
-        />
-        {results.length > 0 && (
-          <>
-            <h3 className="h-[5rem] w-[15rem]  text-3xl text-center rounded-md ">
-              Results:
-            </h3>
-            <div className=" mb-10 rounded-3xl">
-              <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-                {results.map((user) => (
-                  <User
-                    key={user.login}
-                    avatar={user.avatar_url}
-                    url={user.html_url}
-                    name={user.login}
-                  />
-                ))}
-              </div>
-            </div>
-          </>
-        )}
       </div>
+      <Form
+        onChange={onSearchChange}
+        className="h-auto w-full text-black font-thin top-[30%] flex flex-col items-center justify-center px-5 my-10 py-10 md:text-md sm:text-sm"
+        onSubmit={onSearchSubmit}
+        value={query}
+      />
+      {results.length > 0 && (
+        <>
+          <h3 className="h-[5rem] w-[15rem]  text-3xl text-center rounded-md ">
+            Results:
+          </h3>
+          <div className=" mb-10 rounded-3xl">
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+              {results.map((user) => (
+                <User
+                  key={user.login}
+                  avatar={user.avatar_url}
+                  url={user.html_url}
+                  name={user.login}
+                />
+              ))}
+            </div>
+          </div>
+        </>
+      )}
+      <footer
+        className={
+          results.length > 0
+            ? "transition-transform duration-150 hover:scale-125 hover:underline  hover:text-white pb-2"
+            : "transition-transform duration-150 hover:scale-125 hover:underline bottom-0 absolute hover:text-white pb-2"
+        }>
+        <a href="http://github.com/abhikatta">Github</a>
+      </footer>
     </div>
   );
 };
